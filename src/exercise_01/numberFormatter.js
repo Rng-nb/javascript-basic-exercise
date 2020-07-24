@@ -7,6 +7,13 @@ export default function formatNumber(number, option) {
   //
   // * Please implement the function and pass all the tests in format_number_spec.js.
   // * Please do NOT modify the signature of the function.
-
-  throw new Error('Please delete this line and implement the function');
+  // 对象不能直接比较,转换为字符串比较，或者依次比较每一个成员的值
+  let answer;
+  if (JSON.stringify(option) === JSON.stringify({ currency: true })) {
+    answer = '$ '+number.toFixed(2);
+  } 
+  else {
+    answer = number.toFixed(2);
+  }
+  return answer;
 }
